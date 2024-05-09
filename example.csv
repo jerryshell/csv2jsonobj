@@ -1,0 +1,6 @@
+id,name,equiment_slot,stackable,attack,defense,block
+sword,Sword,MainHand,FALSE,60,0,0
+shield,Shield,OffHand,FALSE,0,100,25
+steel_helmet,Steel Helmet,Head,FALSE,0,80,0
+leather_armor,Leather Armor,Chest,FALSE,0,110,0
+jagged_arrow,Jagged Arrow,Projectiles,TRUE,20,0,0
