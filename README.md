@@ -5,7 +5,7 @@ Well, it is what it sounds like.
 ## Install
 
 ```bash
-cargo install --git https://github.com/jerryshell/csv2jsonobj
+cargo install --locked --git https://github.com/jerryshell/csv2jsonobj
 ```
 
 ## Usage
