@@ -2,13 +2,11 @@
 
 Well, it is what it sounds like.
 
-## Install
+## How to use
 
 ```bash
 cargo install --locked --git https://github.com/jerryshell/csv2jsonobj
 ```
-
-## Usage
 
 ```bash
 csv2jsonobj <csv_path> [key_index]
@@ -77,6 +75,12 @@ $ cat output.json
     "stackable": false
   }
 }
+```
+
+## Test
+
+```bash
+cargo test
 ```
 
 ## License
