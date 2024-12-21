@@ -3,9 +3,16 @@ pub fn csv_to_json(
     key_index: usize,
 ) -> Result<serde_json::Value, Box<dyn std::error::Error>> {
     let mut reader = csv::Reader::from_path(csv_path)?;
-    let headers = reader.headers()?.clone();
 
-    let result = reader
+    let headers = reader.headers()?.clone();
+    if headers.is_empty() {
+        return Err("No headers found in CSV file".into());
+    }
+    if key_index >= headers.len() {
+        return Err("key_index is out of bounds".into());
+    }
+
+    let json_map = reader
         .records()
         .filter_map(Result::ok)
         .map(|record| {
@@ -20,7 +27,7 @@ pub fn csv_to_json(
         })
         .collect::<serde_json::Map<String, serde_json::Value>>();
 
-    Ok(serde_json::Value::Object(result))
+    Ok(serde_json::Value::Object(json_map))
 }
 
 fn string_to_json_value(string: &str) -> serde_json::Value {
